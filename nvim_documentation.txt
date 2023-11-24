@@ -1,0 +1,127 @@
+Vim Configuration Documentation
+=================================
+
+General Settings
+-----------------
+
+- `nocompatible`: Disables Vi compatibility mode.
+- `encoding=utf-8`: Sets the encoding to UTF-8.
+- `termguicolors`: Enables true color support.
+- `ttyfast`: Improves rendering speed.
+- `hidden`: Allows switching to unsaved buffers.
+- `ruler`: Displays cursor position and file information.
+- `showmode`: Displays insert/visual/block mode in command line.
+- `showcmd`: Shows partially typed commands in command line.
+- `visualbell`: Flashes the screen instead of beeping.
+- `modelines=0`: Disables modelines to prevent code injection.
+- `lazyredraw`: Improves rendering speed.
+- `wildmenu`: Displays a menu for command line completion.
+- `scrolloff=3`: Keeps three lines above and below the cursor when scrolling.
+- `backspace=indent,eol,start`: Enables backspacing over indents and line breaks.
+- `matchpairs+=<:>`: Enables matching of angle brackets, square brackets, and parentheses.
+- `runtime! macros/matchit.vim`: Enables jumping between matching HTML/XML tags, LaTeX brackets, and C/C++ preprocessor conditional blocks.
+
+
+Line Numbers
+------------
+
+- `set number`: Enables line numbering.
+- `set relativenumber`: Enables relative line numbering.
+- `set rnu`: Short for `set relativenumber number`.
+
+
+Custom Keybindings
+------------------
+
+- `<leader>w`: Writes the current buffer to file.
+- `<leader>q`: Quits Vim.
+- `<leader>e`: Opens file explorer.
+- `<leader>b`: Opens the buffer list.
+- `<leader>z`: Toggles between normal and insert mode.
+- `jj`: Shortcut for `<Esc>`.
+- `jk`: Shortcut for `<Esc>`.
+- `K`: Shows documentation in preview window.
+- `<Tab>`: Triggers completion with characters ahead and navigates.
+- `<S-Tab>`: Triggers completion with characters behind and navigates.
+
+Color Scheme and Plugins
+------------------------
+
+- `ayu-theme/ayu-vim`: A light and dark color scheme for Vim.
+- `junegunn/fzf`: A fuzzy file finder.
+- `junegunn/fzf.vim`: Integrates fzf with Vim.
+- `sjl/badwolf`: A dark color scheme for Vim.
+- `sainnhe/gruvbox-material`: A material design inspired color scheme for Vim.
+- `mattn/emmet-vim`: A plugin for expanding abbreviations like HTML and CSS.
+- `neoclide/coc.nvim`: A plugin for autocompletion, formatting, and more.
+- `lervag/vimtex`: A plugin for editing LaTeX files.
+- `dense-analysis/ale`: A plugin for linting code.
+- `vim-airline/vim-airline`: A plugin for displaying a status line.
+- `feline-nvim/feline.nvim`: A faster and more flexible status line plugin.
+
+
+Coc.nvim Settings
+------------------
+
+- `coc#highlight#colorscheme`: Sets the colorscheme for Coc.nvim.
+- `coc#settings#tabSize`: Sets the tab size.
+- `coc#settings#completion#enableSnippet`: Enables snippet support.
+- `coc#settings#completion#autoTrigger`: Automatically triggers completion.
+- `coc#settings#diagnostic#enable`: Enables diagnostic messages.
+- `coc#settings#diagnostic#displayByAle`: Displays diagnostic messages using ALE.
+
+Emmet Configurations
+--------------------
+
+- `let g:user_emmet_leader_key='<leader>,'`: Sets the leader key for Emmet.
+- `let g:user_emmet_install_global=0`: Disables global installation of Emmet.
+- `let g:user_emmet_install_command='npm install --save emmet-ls'`: Sets the installation command for Emmet.
+- `let g:user_emmet_mode='i'`: Sets the mode for expanding abbreviations. Can be 'i' for insert mode or 'n' for normal mode.
+- `imap <C-j> <C-y>,<C-e>`: Enables the `<C-j>` shortcut for expanding Emmet abbreviations in insert mode.
+- `nmap <C-j> <C-y>,<C-e>`: Enables the `<C-j>` shortcut for expanding Emmet abbreviations in normal mode.
+
+Custom Functions
+----------------
+
+- `function! ToggleLineNumbers()`: A function that toggles line numbers.
+- `function! ToggleRelativeNumbers()`: A function that toggles relative line numbers.
+- `function! ToggleColorColumn()`: A function that toggles the color column.
+- `function! ToggleWhitespace()`: A function that toggles whitespace highlighting.
+- `function! ToggleSpellCheck()`: A function that toggles spell checking.
+- `function! ToggleWrap()`: A function that toggles line wrapping.
+
+Mappings for Custom Functions
+-----------------------------
+
+- `<leader>n`: Toggles line numbers using `ToggleLineNumbers()`.
+- `<leader>r`: Toggles relative line numbers using `ToggleRelativeNumbers()`.
+- `<leader>c`: Toggles the color column using `ToggleColorColumn()`.
+- `<leader>w`: Toggles whitespace highlighting using `ToggleWhitespace()`.
+- `<leader>s`: Toggles spell checking using `ToggleSpellCheck()`.
+- `<leader>l`: Toggles line wrapping using `ToggleWrap()`.
+- `<F3>`: Toggles paste mode.
+- `<F4>`: Toggles search highlighting.
+- `<F5>`: Rebuilds the tags file.
+- `<F6>`: Runs the current file.
+- `<F7>`: Toggles QuickFix window.
+- `<F8>`: Toggles NERDTree window.
+- `<F9>`: Toggles tagbar window.
+- `<F10>`: Toggles GitGutter window.
+- `<C-p>`: Opens CtrlP file finder.
+- `<C-f>`: Opens CtrlP buffer finder.
+- `<C-t>`: Opens tagbar.
+- `<C-b>`: Opens NERDTree.
+- `<C-s>`: Saves the current file.
+- `<C-q>`: Closes the current buffer.
+
+Miscellaneous Settings
+-----------------------
+
+- `let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|sass))$'`: Ignores certain directories and files in CtrlP.
+- `let g:airline_theme='badwolf'`: Sets the theme for vim-airline.
+- `let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'yoffset': 0.3 }, 'preview': { 'height': '50%' } }`: Sets the layout for fzf.
+- `let g:ale_lint_on_text_changed = 0`: Disables automatic linting on text changed.
+- `let g:ale_lint_on_insert_leave = 1`: Enables linting on insert leave.
+- `let g:ale_lint_on_enter = 1`: Enables lint
+
+
