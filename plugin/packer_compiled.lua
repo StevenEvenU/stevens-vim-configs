@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/stevenevenu/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["emmet-vim"] = {
-    loaded = true,
-    path = "/Users/stevenevenu/.local/share/nvim/site/pack/packer/start/emmet-vim",
-    url = "https://github.com/mattn/emmet-vim"
-  },
   gruvbox = {
     loaded = true,
     path = "/Users/stevenevenu/.local/share/nvim/site/pack/packer/start/gruvbox",
@@ -159,6 +154,11 @@ _G.packer_plugins = {
     path = "/Users/stevenevenu/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
   },
+  ["vim-closetag"] = {
+    loaded = true,
+    path = "/Users/stevenevenu/.local/share/nvim/site/pack/packer/start/vim-closetag",
+    url = "https://github.com/alvan/vim-closetag"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/Users/stevenevenu/.local/share/nvim/site/pack/packer/start/vim-commentary",
@@ -168,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/stevenevenu/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/stevenevenu/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   }
 }
 

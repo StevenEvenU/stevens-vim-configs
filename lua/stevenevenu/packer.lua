@@ -37,6 +37,8 @@ return require('packer').startup(function(use)
     {'L3MON4D3/LuaSnip'},
   }
 }
-use {'mattn/emmet-vim'}
 use {'tpope/vim-commentary'}
+--- Working with tags
+use {'tpope/vim-surround'}
+use {'alvan/vim-closetag'}
   end)
