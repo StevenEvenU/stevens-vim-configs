@@ -1,7 +1,8 @@
 local lsp_zero = require('lsp-zero')
+lsp_zero.extend_lspconfig()
 
 lsp_zero.on_attach(function(client, bufnr)
-    local opts = {buffer = bufnr, remap = false}
+    local opts = { buffer = bufnr, remap = false }
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -13,7 +14,7 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-    vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format({ async = true}) end, opts)
+    vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end, opts)
 
     -- Autocmd to format on save
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -27,8 +28,8 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {'tsserver', 'eslint', 'lua_ls', 'rust_analyzer',
-    'clangd'},
+    ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer',
+        'clangd' },
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
@@ -39,13 +40,13 @@ require('mason-lspconfig').setup({
 })
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
     sources = {
-        {name = 'path'},
-        {name = 'nvim_lsp'},
-        {name = 'nvim_lua'},
+        { name = 'path' },
+        { name = 'nvim_lsp' },
+        { name = 'nvim_lua' },
     },
     formatting = lsp_zero.cmp_format(),
     mapping = cmp.mapping.preset.insert({
