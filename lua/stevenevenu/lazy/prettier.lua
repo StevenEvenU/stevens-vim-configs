@@ -2,7 +2,7 @@ return {
     'prettier/vim-prettier',
 
     run = 'npm install',
-    ft = {'javascript', 'json', 'css', 'less' 'scss', 'html', 'markdown' },
+    ft = {'javascript', 'json', 'css', 'less', 'scss', 'html', 'markdown' },
 
     config = function()
         vim.api.nvim_exec([[
