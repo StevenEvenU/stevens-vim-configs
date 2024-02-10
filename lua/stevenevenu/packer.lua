@@ -41,4 +41,9 @@ return require('packer').startup(function(use)
     --- Working with tags
     use { 'tpope/vim-surround' }
     use { 'alvan/vim-closetag' }
+    use { 'github/copilot.vim' }
+    use {
+        'prettier/vim-prettier',
+        run = 'npm install', ft = { 'javascript', 'json', 'css', 'less', 'scss', 'html', 'markdown' },
+    }
 end)

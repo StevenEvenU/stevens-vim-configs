@@ -22,6 +22,25 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.backspace = { "indent", "eol", "start" }
 vim.opt.matchpairs:append("<:>")
+-- Function to run Prettier
+local function prettier()
+    local filepath = vim.fn.shellescape(vim.api.nvim_buf_get_name(0))
+    vim.cmd('silent! %!prettier --stdin-filepath ' .. filepath)
+end
+
+-- Auto command for HTML, CSS, JavaScript
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "*.html", "*.css", "*.js" },
+    callback = prettier,
+})
+
+-- Key mapping for supported file types
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+    pattern = { "*.html", "*.css", "*.js" },
+    callback = function()
+        vim.api.nvim_buf_set_keymap(0, 'n', '<leader>f', ':lua prettier()<CR>', { noremap = true, silent = true })
+    end,
+})
 
 -- Line numbers and cursor settings
 vim.opt.number = true
